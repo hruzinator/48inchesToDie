@@ -17,19 +17,25 @@ public class EnemySpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		lastSpawn = 0;
+		lastSpawn = Time.time;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(respawnFrequency * (alpha*(1/Mathf.Exp(tdist*Time.time))) >= minFrequency) {
-			respawnFrequency = respawnFrequency * (alpha*(1/Mathf.Exp(tdist*Time.time)));
-		} else {
-			respawnFrequency = minFrequency;
-		}
-		if (Time.time - respawnFrequency > lastSpawn) {
-			lastSpawn += respawnFrequency;
-			SpawnEnemy ();
+		if (Time.timeScale == 0) { //the game is paused
+						lastSpawn = Time.time;
+			}
+		else {
+			if (respawnFrequency * (alpha * (1 / Mathf.Exp (tdist * Time.time))) >= minFrequency) {
+				respawnFrequency = respawnFrequency * (alpha * (1 / Mathf.Exp (tdist * Time.time)));
+			}
+			else {
+				respawnFrequency = minFrequency;
+			}
+			if (Time.time - respawnFrequency > lastSpawn) {
+				lastSpawn += respawnFrequency;
+				SpawnEnemy ();
+			}
 		}
 	}
 
@@ -43,3 +49,4 @@ public class EnemySpawner : MonoBehaviour {
 		nextEnemy.position = newPosition;
 	}
 }
+
