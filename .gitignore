@@ -1,0 +1,12 @@
+Developer Project/Library/
+Developer Project/ProjectSettings/
+Developer Project/Temp/
+Developer Project/*.userprefs
+Developer Project/*.sln
+Developer Project/*.svd
+Developer Project/*.csproj
+Developer Project/*.pidb
+Developer Project/*.suo
+Developer Project/*.user
+Developer Project/*.unityproj
+Developer Project/*.booproj
