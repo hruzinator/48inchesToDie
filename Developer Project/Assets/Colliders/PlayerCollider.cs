@@ -17,8 +17,8 @@ public class PlayerCollider : MonoBehaviour {
 		index = carts.Length-1;
 	}
 	
-	void OnTriggerEnter2D(Collider2D collision){
-		if(collision.tag == "Enemy") {
+	void OnCollisionEnter2D(Collision2D collision){
+		if(collision.collider.tag == "Enemy") {
 			hp -= 1;
 			if(index >= 0) {
 				deathSounds[0].Play ();
