@@ -37,6 +37,7 @@ public class Gun : MonoBehaviour
 			float y = Mathf.Sin (Mathf.Deg2Rad*angle)*0.28f;
 			GameObject bulletInstance = Instantiate(bullet, new Vector3(transform.position.x+x, transform.position.y+y, 0f), Quaternion.Euler(new Vector3(0,0,angle))) as GameObject;
 			bulletInstance.GetComponent<Bullet>().angle = angle;
+			gameObject.GetComponent<AudioSource>().Play();
 		}
 	}
 }
