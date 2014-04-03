@@ -19,7 +19,7 @@ public class TimeScoreUpdater : MonoBehaviour {
 			gameObject.GetComponent<GUIText>().text = "Final score time: " + scoreTime.ToString();
 		}
 		else{
-			scoreTime = Time.realtimeSinceStartup;
+			scoreTime = Time.timeSinceLevelLoad;
 			gameObject.GetComponent<GUIText>().text = "Time: " + scoreTime.ToString();
 		}
 	}

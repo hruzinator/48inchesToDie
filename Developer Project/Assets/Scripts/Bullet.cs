@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Bullet : MonoBehaviour {
 
-	private float maxSpeed = 90f;
+	//private float maxSpeed = 90f;
 	public float angle;
 
 	// Use this for initialization
