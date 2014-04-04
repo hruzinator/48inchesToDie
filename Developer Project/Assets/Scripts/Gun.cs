@@ -6,12 +6,25 @@ public class Gun : MonoBehaviour
 	public GameObject bullet;	
 	public float speed = 45f;
 	public GameObject hero;
-	
+	Animator heroAnimator;
+	public float coolDownTime = .3f;
+	public bool shot = false;
+	public float coolDown;
+
+	void Start(){
+//		heroAnimator = transform.FindComponent
+	}
+
 	void Update ()
 	{
 		// If the fire button is pressed...
-		if(Input.GetButtonDown("Fire1"))
+		if(Input.GetButtonDown("Fire1") && (coolDownTime <= 0))
 		{
+			shot = true;
+			if (shot) {
+				coolDownTime = .3f;
+				shot = false;
+			}
 			// If the player is facing right...
 			/*if(hero.GetComponentInChildren<ArmRotation>().facingRight)
 			{
@@ -39,5 +52,7 @@ public class Gun : MonoBehaviour
 			bulletInstance.GetComponent<Bullet>().angle = angle;
 			gameObject.GetComponent<AudioSource>().Play();
 		}
+
+		coolDownTime -= Time.deltaTime;
 	}
 }

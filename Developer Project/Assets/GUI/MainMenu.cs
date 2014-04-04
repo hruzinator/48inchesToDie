@@ -7,10 +7,6 @@ using System.Collections;
 
 public class MainMenu : MonoBehaviour {
 	public Texture backgroundTexture;
-	public float guiPlacementLevelSelectY;
-	public float guiPlacementLevelSelectX;
-	public float guiPlacementOptionsY;
-	public float guiPlacementOptionsX;
 	public Texture play;
 	public Texture quit;
 
@@ -31,11 +27,11 @@ public class MainMenu : MonoBehaviour {
 		}*/
 		//To use a texture
 	 	//Displays buttons
-		if(GUI.Button (new Rect(Screen.width*guiPlacementLevelSelectX,Screen.height*guiPlacementLevelSelectY,Screen.width*.2f,Screen.height*.1f),play,"")){
+		if(GUI.Button (new Rect(Screen.width*.3f,Screen.height*.9f,Screen.width*.4f,Screen.height*.2f),play,"")){
 			Application.LoadLevel("Tutorial");
 		}
 
-		if(GUI.Button (new Rect(Screen.width*guiPlacementOptionsX,Screen.height*guiPlacementOptionsY,Screen.width*.2f,Screen.height*.1f),quit,"")){
+		if(GUI.Button (new Rect(Screen.width*.7f,Screen.height*.9f,Screen.width*.8f,Screen.height*.4f),quit,"")){
 			Application.Quit();
 		}
 
